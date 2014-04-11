@@ -5,7 +5,7 @@
 fibb1 :: Integer -> Integer
 fibb1 0 = 1
 fibb1 1 = 1
-fibb1 n = n * fibb (n-1)
+fibb1 n = n * fibb1 (n-1)
 
 
 -- ガードを使うと、負の数も含められる
@@ -28,6 +28,10 @@ tails xs  =  xs : case xs of
 concat2 :: [[a]] -> [a]
 concat2 = foldr (++) []
 
+concat3 :: [[a]] -> [a]
+concat3 []       = []
+concat3 (x:xs) = x ++ concat3 xs
+
 
 -- Haskellでは、「A」を「B」で割ったときの商は「div A B」、余りは「mod A B」と書く。
 
@@ -38,3 +42,5 @@ calGCD a b
        | otherwise      = calGCD d (mod c d)
        where c = max a b
              d = min a b
+
+

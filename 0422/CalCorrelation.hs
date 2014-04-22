@@ -1,4 +1,16 @@
 
+{--
+---- How to use ----
+
+pearsonCorrelation [1,2,3,4] [0,1,2,3]
+-> 1.0
+
+->pearsonCorrelation [1,2,3,4] [4,3,2,1]
+-1.0
+
+--}
+
+
 module CalCorrelation
        ( pearsonCorrelation )
        where
